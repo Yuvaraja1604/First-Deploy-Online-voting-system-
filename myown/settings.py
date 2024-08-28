@@ -29,7 +29,7 @@ SECRET_KEY = Config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = Config("ALLOWED_HOSTS").split(",")
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", subcast=str)
 
 
 # Application definition
