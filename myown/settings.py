@@ -85,7 +85,11 @@ DATABASES = {
     }
 }
 
-DATABASES['default']=dj_database_url.parse(Config("DATABASE_URL"))
+DATABASE_URL = env.str("DATABASE_URL")
+
+DATABASES = {
+    'default': dj_database_url.parse(DATABASE_URL)
+}
 
 
 # Password validation
